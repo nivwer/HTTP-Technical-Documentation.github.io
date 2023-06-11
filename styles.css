@@ -1,3 +1,12 @@
+:root {
+    --color-letter: #a3a3a3;
+    --color-letter2: #8c8c8c;
+    --color-primary1: #000000;
+    --color-primary2: #414141;
+    --color-primary3: #0b0b0b;
+}
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -11,8 +20,8 @@ html {
 /* Small Screen */
 
 body {
-    background-color: #131416;
-    color:#cdcdcd;
+    background-color: var(--color-primary1);
+    color:var(--color-letter2);
     font-family: 'Noto Sans Mono', monospace;
     font-size: 8px;
     overflow-x: hidden;
@@ -20,18 +29,18 @@ body {
 
 body::-webkit-scrollbar {
     width: 13px;
-    background: #090d0e;
+    background: var(--color-primary1);
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #253336;
+    background: var(--color-primary1);
     border: 1px solid #090d0e;
     border-radius: 10px;
 }
 
 
 .container {
-    background-color: #090d0e;
+    background-color: var(--color-primary1);
     display: grid;
     padding: auto;
     margin: auto;
@@ -52,7 +61,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav-logo {
-    background-color: #090d0e;
+    background-color: var(--color-primary1);
     width: 100%;
     font-size: 26px;
     padding: 8px 60px;
@@ -62,12 +71,12 @@ body::-webkit-scrollbar-thumb {
 
 .nav-logo a {
     text-decoration: none;
-    color: #cdcdcd;  
+    color: var(--color-letter);
 }
 
 .nav-label {
     position: fixed;
-    background-color: #090d0e;
+    background-color: var(--color-primary1);
     width: 52px;
     height: 52px;
     padding: 13px 22px;
@@ -78,14 +87,14 @@ body::-webkit-scrollbar-thumb {
 
 .nav-label i {
     display: inline-block;
-    background-color: #090d0e;
-    color:#cdcdcd;
+    background-color: var(--color-primary1);
+    color:#9d9d9d;
     font-size: 28px;
     z-index: 35;
 }
 
 .nav-div {
-    background-color: #090d0e;
+    background-color: var(--color-primary1);
     position: absolute;
     height: 100vh;
     transition: 0.6s ease-out; 
@@ -110,11 +119,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav-div_div::-webkit-scrollbar {
-    background: #090d0e;
+    background: var(--color-primary1);
 }
 
 .nav-div_div::-webkit-scrollbar-thumb {
-    background: #090d0e;
+    background: var(--color-primary1);
 }
 
 .nav-list li {
@@ -124,12 +133,12 @@ body::-webkit-scrollbar-thumb {
 
 .nav-list a {
     text-decoration: none;
-    color:#cdcdcd;
+    color:var(--color-letter2);
     padding: 20px 0;
 }
 
 .nav-list a:hover {
-    color: #377787;
+    color: var(--color-primary2);
 }
 
 
@@ -209,7 +218,7 @@ body::-webkit-scrollbar-thumb {
     margin-left: auto;
     width: 90%;
     padding: 15px;
-    background-color: #1a2223;
+    background-color: var(--color-primary3);
     display: block;
     border-radius: 5px;
 }
@@ -225,7 +234,7 @@ body::-webkit-scrollbar-thumb {
 
 .main-div a {
     text-decoration: none;
-    color: #377787;
+    color: var(--color-primary2);
 }
 
 .main-div a:hover {
@@ -269,7 +278,7 @@ body::-webkit-scrollbar-thumb {
 
 .reference a {
     text-decoration: none;
-    color: #377787;
+    color: var(--color-primary2);
 }
 
 .reference a:hover {
@@ -400,7 +409,7 @@ body::-webkit-scrollbar-thumb {
     .nav-div {
         position: relative;
         transform: translateY(0);
-        background-color: #090d0e;  
+        background-color: var(--color-primary1);  
     }
 
     .nav-list li {
@@ -414,7 +423,7 @@ body::-webkit-scrollbar-thumb {
     }
     
     .nav-list li:hover {
-        border-left: 3px solid #377787;
+        border-left: 3px solid var(--color-primary2);
     }
 
 
@@ -483,11 +492,11 @@ body::-webkit-scrollbar-thumb {
     }
 
     .reference-div::-webkit-scrollbar {
-        background: #090d0e;
+        background: var(--color-primary1);
     }
     
     .reference-div::-webkit-scrollbar-thumb {
-        background: #090d0e;
+        background: var(--color-primary1);
     }
 
     .reference-div header {
@@ -502,4 +511,10 @@ body::-webkit-scrollbar-thumb {
         padding: 0; 
     }
 
+}
+
+
+
+header {
+    color: var(--color-letter);
 }

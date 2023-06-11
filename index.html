@@ -1,301 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>HTTP Authentication Tec-Doc</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/0ad893f986.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container">
-            <!--Nav-->
-            <nav class="navbar" id="navbar">
-                <div class="navbar-div">
-                    <!--Nav (Logo)-->
-                    <div class="nav-logo">
-                        <header><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank"><b>HTTP</b></a></header>
-                    </div>
 
-                    <!--Nav (Menu)-->
-                    <label class="nav-label" for="menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </label>
-                    <input class="nav-input" id="menu" type="checkbox">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="nivwer">
+    <meta name="description" content="HTTP Technical Documentation Page">
+    <meta name="keywords" content="HTTP, Documentation, Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTTP Authentication Tec-Doc</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0ad893f986.js" crossorigin="anonymous"></script>
+</head>
 
-                    <!--Nav (Links)-->
-                    <div class="nav-div">
-                        <div class="nav-div_div">
-                            <ul class="nav-list">
-                                <li>
-                                    <a class="nav-link" href="#HTTP_authentication">HTTP authentication</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#The_general_HTTP_authentication_framework">The general HTTP authentication framework</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Proxy_authentication">Proxy authentication</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Access_forbidden">Access forbidden</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Authentication_of_cross-origin_images">Authentication of cross-origin images</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Character_encoding_of_HTTP_authentication">Character encoding of HTTP authentication</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#WWW-Authenticate_and_Proxy-Authenticate_headers">WWW-Authenticate and Proxy-Authenticate headers</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Authorization_and_Proxy-Authorization_headers">Authorization and Proxy-Authorization headers</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Authentication_schemes">Authentication schemes</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Basic_authentication_scheme">Basic authentication scheme</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Security_of_basic_authentication">Security of basic authentication</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Restricting_access_with_Apache_and_basic_authentication">Restricting access with Apache and basic authentication</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Restricting_access_with_Nginx_and_basic_authentication">Restricting access with Nginx and basic authentication</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#Access_using_credentials_in_the_URL">Access using credentials in the URL</a>
-                                </li>
-                            </ul>
-                        </div>
+<body>
+    <div class="container">
+        <!--Nav-->
+        <nav class="navbar" id="navbar">
+            <div class="navbar-div">
+                <!--Nav (Logo)-->
+                <div class="nav-logo">
+                    <header><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank"><b>HTTP</b></a>
+                    </header>
+                </div>
+
+                <!--Nav (Menu)-->
+                <label class="nav-label" for="menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <input class="nav-input" id="menu" type="checkbox">
+
+                <!--Nav (Links)-->
+                <div class="nav-div">
+                    <div class="nav-div_div">
+                        <ul class="nav-list">
+                            <li>
+                                <a class="nav-link" href="#HTTP_authentication">HTTP authentication</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#The_general_HTTP_authentication_framework">The general HTTP
+                                    authentication framework</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Proxy_authentication">Proxy authentication</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Access_forbidden">Access forbidden</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Authentication_of_cross-origin_images">Authentication of
+                                    cross-origin images</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Character_encoding_of_HTTP_authentication">Character encoding
+                                    of HTTP authentication</a>
+                            </li>
+                            <li>
+                                <a class="nav-link"
+                                    href="#WWW-Authenticate_and_Proxy-Authenticate_headers">WWW-Authenticate and
+                                    Proxy-Authenticate headers</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Authorization_and_Proxy-Authorization_headers">Authorization
+                                    and Proxy-Authorization headers</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Authentication_schemes">Authentication schemes</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Basic_authentication_scheme">Basic authentication scheme</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Security_of_basic_authentication">Security of basic
+                                    authentication</a>
+                            </li>
+                            <li>
+                                <a class="nav-link"
+                                    href="#Restricting_access_with_Apache_and_basic_authentication">Restricting access
+                                    with Apache and basic authentication</a>
+                            </li>
+                            <li>
+                                <a class="nav-link"
+                                    href="#Restricting_access_with_Nginx_and_basic_authentication">Restricting access
+                                    with Nginx and basic authentication</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Access_using_credentials_in_the_URL">Access using credentials
+                                    in the URL</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </nav>
-            <!--Main-->
-            <main id="main-doc">
-                <div class="main-div">
-                    <section class="main-section" id="HTTP_authentication">
-                        <header class="big-title"><b>HTTP authentication</b></header>
-                        <article>
-                            <p>HTTP provides a general framework for access control and authentication. This page is an introduction to the HTTP framework for authentication, and shows how to restrict access to your server using the HTTP "Basic" schema.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="The_general_HTTP_authentication_framework">
-                        <header class="medium-title"><b>The general HTTP authentication framework</b></header>
-                        <article>
-                            <p><a href="https://datatracker.ietf.org/doc/html/rfc7235" target="_blank">RFC 7235</a> defines the HTTP authentication framework, which can be used by a server to <a href="https://developer.mozilla.org/en-US/docs/Glossary/challenge" target="_blank">challenge</a> a client request, and by a client to provide authentication information.</p>
-                            <p>The challenge and response flow works like this:</p>
-                            <ol>
-                                <li>
-                                    The server responds to a client with a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401 (Unauthorized)</a> response status and provides information on how to authorize with a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate" target="_blank">WWW-Authenticate</a> response header containing at least one challenge.
-                                </li>
-                                <li>
-                                    A client that wants to authenticate itself with the server can then do so by including an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a> request header with the credentials.
-                                </li>
-                                <li>
-                                    Usually a client will present a password prompt to the user and will then issue the request including the correct Authorization header.
-                                </li>
-                            </ol>
-                            <img src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication/http-auth-sequence-diagram.png">
-                            <p>The general message flow above is the same for most (if not all) <a href="#Authentication_schemes">authentication schemes</a>. The actual information in the headers and the way it is encoded does change!</p>
-                            <p>Warning: The "Basic" authentication scheme used in the diagram above sends the credentials encoded but not encrypted. This would be completely insecure unless the exchange was over a secure connection (HTTPS/TLS).</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Proxy_authentication">
-                        <header class="small-title">Proxy authentication</header>
-                        <article>
-                            <p>The same challenge and response mechanism can be used for proxy authentication. As both resource authentication and proxy authentication can coexist, a different set of headers and status codes is needed. In the case of proxies, the challenging status code is <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407" target="_blank">407 (Proxy Authentication Required)</a>, the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authenticate" target="_blank">Proxy-Authenticate</a> response header contains at least one challenge applicable to the proxy, and the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization" target="_blank">Proxy-Authorization</a> request header is used for providing the credentials to the proxy server.</p>  
-                        </article>
-                    </section>
-                    <section class="main-section" id="Access_forbidden">
-                        <header class="small-title">Access forbidden</header>
-                        <article>
-                            <p>If a (proxy) server receives invalid credentials, it should respond with a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401 Unauthorized</a> or with a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407" target="_blank">407 Proxy Authentication Required</a>, and the user may send a new request or replace the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a> header field.</p>  
-                            <p>If a (proxy) server receives valid credentials that are inadequate to access a given resource, the server should respond with the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403" target="_blank">403 Forbidden</a> status code. Unlike <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401 Unauthorized</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407" target="_blank">407 Proxy Authentication Required</a>, authentication is impossible for this user and browsers will not propose a new attempt.</p>
-                            <p>In all cases, the server may prefer returning a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404" target="_blank">404 Not Found</a> status code, to hide the existence of the page to a user without adequate privileges or not correctly authenticated.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Authentication_of_cross-origin_images">
-                        <header class="small-title">Authentication of cross-origin images</header>
-                        <article>
-                            <p>A potential security hole (that has since been fixed in browsers) was authentication of cross-site images. From <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/59" target="_blank">Firefox 59</a> onwards, image resources loaded from different origins to the current document are no longer able to trigger HTTP authentication dialogs (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1423146" target="_blank">bug 1423146</a>), preventing user credentials being stolen if attackers were able to embed an arbitrary image into a third-party page.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Character_encoding_of_HTTP_authentication">
-                        <header class="small-title">Character encoding of HTTP authentication</header>
-                        <article>
-                            <p>Browsers use utf-8 encoding for usernames and passwords.</p>
-                            <p>Firefox once used ISO-8859-1, but changed to utf-8 for parity with other browsers and to avoid potential problems as described in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1419658" target="_blank">bug 1419658</a>.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="WWW-Authenticate_and_Proxy-Authenticate_headers">
-                        <header class="small-title">WWW-Authenticate and Proxy-Authenticate headers</header>
-                        <article>
-                            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate" target="_blank">WWW-Authenticate</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authenticate" target="_blank">Proxy-Authenticate</a> response headers define the authentication method that should be used to gain access to a resource. They must specify which authentication scheme is used, so that the client that wishes to authorize knows how to provide the credentials.</p>
-                            <p>The syntax for these headers is the following:</p>
-                            <code>
+            </div>
+        </nav>
+        <!--Main-->
+        <main id="main-doc">
+            <div class="main-div">
+                <section class="main-section" id="HTTP_authentication">
+                    <header class="big-title"><b>HTTP authentication</b></header>
+                    <article>
+                        <p>HTTP provides a general framework for access control and authentication. This page is an
+                            introduction to the HTTP framework for authentication, and shows how to restrict access to
+                            your server using the HTTP "Basic" schema.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="The_general_HTTP_authentication_framework">
+                    <header class="medium-title"><b>The general HTTP authentication framework</b></header>
+                    <article>
+                        <p><a href="https://datatracker.ietf.org/doc/html/rfc7235" target="_blank">RFC 7235</a> defines
+                            the HTTP authentication framework, which can be used by a server to <a
+                                href="https://developer.mozilla.org/en-US/docs/Glossary/challenge"
+                                target="_blank">challenge</a> a client request, and by a client to provide
+                            authentication information.</p>
+                        <p>The challenge and response flow works like this:</p>
+                        <ol>
+                            <li>
+                                The server responds to a client with a <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
+                                    target="_blank">401 (Unauthorized)</a> response status and provides information on
+                                how to authorize with a <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate"
+                                    target="_blank">WWW-Authenticate</a> response header containing at least one
+                                challenge.
+                            </li>
+                            <li>
+                                A client that wants to authenticate itself with the server can then do so by including
+                                an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization"
+                                    target="_blank">Authorization</a> request header with the credentials.
+                            </li>
+                            <li>
+                                Usually a client will present a password prompt to the user and will then issue the
+                                request including the correct Authorization header.
+                            </li>
+                        </ol>
+                        <img
+                            src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication/http-auth-sequence-diagram.png">
+                        <p>The general message flow above is the same for most (if not all) <a
+                                href="#Authentication_schemes">authentication schemes</a>. The actual information in the
+                            headers and the way it is encoded does change!</p>
+                        <p>Warning: The "Basic" authentication scheme used in the diagram above sends the credentials
+                            encoded but not encrypted. This would be completely insecure unless the exchange was over a
+                            secure connection (HTTPS/TLS).</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Proxy_authentication">
+                    <header class="small-title">Proxy authentication</header>
+                    <article>
+                        <p>The same challenge and response mechanism can be used for proxy authentication. As both
+                            resource authentication and proxy authentication can coexist, a different set of headers and
+                            status codes is needed. In the case of proxies, the challenging status code is <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407" target="_blank">407
+                                (Proxy Authentication Required)</a>, the <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authenticate"
+                                target="_blank">Proxy-Authenticate</a> response header contains at least one challenge
+                            applicable to the proxy, and the <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization"
+                                target="_blank">Proxy-Authorization</a> request header is used for providing the
+                            credentials to the proxy server.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Access_forbidden">
+                    <header class="small-title">Access forbidden</header>
+                    <article>
+                        <p>If a (proxy) server receives invalid credentials, it should respond with a <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401
+                                Unauthorized</a> or with a <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407" target="_blank">407
+                                Proxy Authentication Required</a>, and the user may send a new request or replace the <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization"
+                                target="_blank">Authorization</a> header field.</p>
+                        <p>If a (proxy) server receives valid credentials that are inadequate to access a given
+                            resource, the server should respond with the <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403" target="_blank">403
+                                Forbidden</a> status code. Unlike <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401
+                                Unauthorized</a> or <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407" target="_blank">407
+                                Proxy Authentication Required</a>, authentication is impossible for this user and
+                            browsers will not propose a new attempt.</p>
+                        <p>In all cases, the server may prefer returning a <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404" target="_blank">404
+                                Not Found</a> status code, to hide the existence of the page to a user without adequate
+                            privileges or not correctly authenticated.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Authentication_of_cross-origin_images">
+                    <header class="small-title">Authentication of cross-origin images</header>
+                    <article>
+                        <p>A potential security hole (that has since been fixed in browsers) was authentication of
+                            cross-site images. From <a
+                                href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/59"
+                                target="_blank">Firefox 59</a> onwards, image resources loaded from different origins to
+                            the current document are no longer able to trigger HTTP authentication dialogs (<a
+                                href="https://bugzilla.mozilla.org/show_bug.cgi?id=1423146" target="_blank">bug
+                                1423146</a>), preventing user credentials being stolen if attackers were able to embed
+                            an arbitrary image into a third-party page.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Character_encoding_of_HTTP_authentication">
+                    <header class="small-title">Character encoding of HTTP authentication</header>
+                    <article>
+                        <p>Browsers use utf-8 encoding for usernames and passwords.</p>
+                        <p>Firefox once used ISO-8859-1, but changed to utf-8 for parity with other browsers and to
+                            avoid potential problems as described in <a
+                                href="https://bugzilla.mozilla.org/show_bug.cgi?id=1419658" target="_blank">bug
+                                1419658</a>.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="WWW-Authenticate_and_Proxy-Authenticate_headers">
+                    <header class="small-title">WWW-Authenticate and Proxy-Authenticate headers</header>
+                    <article>
+                        <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate"
+                                target="_blank">WWW-Authenticate</a> and <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authenticate"
+                                target="_blank">Proxy-Authenticate</a> response headers define the authentication method
+                            that should be used to gain access to a resource. They must specify which authentication
+                            scheme is used, so that the client that wishes to authorize knows how to provide the
+                            credentials.</p>
+                        <p>The syntax for these headers is the following:</p>
+                        <code>
                                 <span class="code-span"><span>WWW-Authenticate</span><span>:</span> <span>&lt;type&gt; realm=&lt;realm&gt;</span></span>
                                 <span class="code-span"><span>Proxy-Authenticate</span><span>:</span> <span>&lt;type&gt; realm=&lt;realm&gt;</span></span>
                             </code>
-                            <p>Here, &lt;type&gt; is the authentication scheme ("Basic" is the most common scheme and <a href="#Basic_authentication_scheme">introduced below</a>). The realm is used to describe the protected area or to indicate the scope of protection. This could be a message like "Access to the staging site" or similar, so that the user knows to which space they are trying to get access to.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Authorization_and_Proxy-Authorization_headers">
-                        <header class="small-title">Authorization and Proxy-Authorization headers</header>
-                        <article>
-                            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authenticate" target="_blank">Proxy-Authenticate</a> request headers contain the credentials to authenticate a user agent with a (proxy) server. Here, the &lt;type&gt; is needed again followed by the credentials, which can be encoded or encrypted depending on which authentication scheme is used.</p>
-                                <code>
+                        <p>Here, &lt;type&gt; is the authentication scheme ("Basic" is the most common scheme and <a
+                                href="#Basic_authentication_scheme">introduced below</a>). The realm is used to describe
+                            the protected area or to indicate the scope of protection. This could be a message like
+                            "Access to the staging site" or similar, so that the user knows to which space they are
+                            trying to get access to.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Authorization_and_Proxy-Authorization_headers">
+                    <header class="small-title">Authorization and Proxy-Authorization headers</header>
+                    <article>
+                        <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization"
+                                target="_blank">Authorization</a> and <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authenticate"
+                                target="_blank">Proxy-Authenticate</a> request headers contain the credentials to
+                            authenticate a user agent with a (proxy) server. Here, the &lt;type&gt; is needed again
+                            followed by the credentials, which can be encoded or encrypted depending on which
+                            authentication scheme is used.</p>
+                        <code>
                                     <span class="code-span"><span>Authorization</span><span>:</span> <span>&lt;type&gt; &lt;credentials&gt;</span></span>
                                     <span class="code-span"><span>Proxy-Authorization</span><span>:</span> <span>&lt;type&gt; &lt;credentials&gt;</span></span>
                                 </code>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Authentication_schemes">
-                        <header class="medium-title"><b>Authentication schemes</b></header>
-                        <article>
-                            <p>The general HTTP authentication framework is the base for a number of authentication schemes.</p>
-                            <p>IANA maintains a <a href="https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml" target="_blank">list of authentication schemes</a>, but there are other schemes offered by host services, such as Amazon AWS.</p>
-                            <p>Some common authentication schemes include:</p>
-                            <ul>
-                                <li>
-                                    <b>Basic</b>
-                                    <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7617" target="_blank">RFC 7617</a>, base64-encoded credentials. More information below.</p>
-                                </li>
-                                <li>
-                                    <b>Bearer</b>
-                                    <p>See <a href="https://datatracker.ietf.org/doc/html/rfc6750" target="_blank">RFC 6750</a>, bearer tokens to access OAuth 2.0-protected resources</p>
-                                </li>
-                                <li>
-                                    <b>Digest</b>
-                                    <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7616" target="_blank">RFC 7616</a>. Firefox 93 and later support the SHA-256 algorithm. Previous versions only support MD5 hashing (not recommended).</p>
-                                </li>
-                                <li>
-                                    <b>HOBA</b>
-                                    <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7486" target="_blank">RFC 7486</a>, Section 3, HTTP Origin-Bound Authentication, digital-signature-based</p>
-                                </li>
-                                <li>
-                                    <b>Mutual</b>
-                                    <p>See <a href="https://datatracker.ietf.org/doc/html/rfc8120" target="_blank">RFC 8120</a></p>
-                                </li>
-                                <li>
-                                    <b>Negotiate / NTLM</b>
-                                    <p>See <a href="https://www.ietf.org/rfc/rfc4559.txt" target="_blank">RFC 4599</a></p>
-                                </li>
-                                <li>
-                                    <b>VAPID</b>
-                                    <p>See <a href="https://datatracker.ietf.org/doc/html/rfc8292" target="_blank">RFC 8292</a></p>
-                                </li>
-                                <li>
-                                    <b>SCRAM</b>
-                                    <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7804" target="_blank">RFC 7804</a></p>
-                                </li>
-                                <li>
-                                    <b>AWS4-HMAC-SHA256</b>
-                                    <p>See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html" target="_blank">AWS docs</a>. This scheme is used for AWS3 server authentication.</p>
-                                </li>
-                            </ul>
-                            <p>Schemes can differ in security strength and in their availability in client or server software.</p>
-                            <p>The "Basic" authentication scheme offers very poor security, but is widely supported and easy to set up. It is introduced in more detail below.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Basic_authentication_scheme">
-                        <header class="medium-title"><b>Basic authentication scheme</b></header>
-                        <article>
-                            <p>The "Basic" HTTP authentication scheme is defined in <a href="https://datatracker.ietf.org/doc/html/rfc7617" target="_blank">RFC 7617</a>, which transmits credentials as user ID/password pairs, encoded using base64.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Security_of_basic_authentication">
-                        <header class="small-title">Security of basic authentication</header>
-                        <article>
-                            <p>As the user ID and password are passed over the network as clear text (it is base64 encoded, but base64 is a reversible encoding), the basic authentication scheme is not secure. HTTPS/TLS should be used with basic authentication. Without these additional security enhancements, basic authentication should not be used to protect sensitive or valuable information.</p>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Restricting_access_with_Apache_and_basic_authentication">
-                        <header class="small-title">Restricting access with Apache and basic authentication</header>
-                        <article>
-                            <p>To password-protect a directory on an Apache server, you will need a .htaccess and a .htpasswd file.</p>
-                            <p>The .htaccess file typically looks like this:</p>
-                            <code>
+                    </article>
+                </section>
+                <section class="main-section" id="Authentication_schemes">
+                    <header class="medium-title"><b>Authentication schemes</b></header>
+                    <article>
+                        <p>The general HTTP authentication framework is the base for a number of authentication schemes.
+                        </p>
+                        <p>IANA maintains a <a
+                                href="https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml"
+                                target="_blank">list of authentication schemes</a>, but there are other schemes offered
+                            by host services, such as Amazon AWS.</p>
+                        <p>Some common authentication schemes include:</p>
+                        <ul>
+                            <li>
+                                <b>Basic</b>
+                                <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7617" target="_blank">RFC
+                                        7617</a>, base64-encoded credentials. More information below.</p>
+                            </li>
+                            <li>
+                                <b>Bearer</b>
+                                <p>See <a href="https://datatracker.ietf.org/doc/html/rfc6750" target="_blank">RFC
+                                        6750</a>, bearer tokens to access OAuth 2.0-protected resources</p>
+                            </li>
+                            <li>
+                                <b>Digest</b>
+                                <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7616" target="_blank">RFC
+                                        7616</a>. Firefox 93 and later support the SHA-256 algorithm. Previous versions
+                                    only support MD5 hashing (not recommended).</p>
+                            </li>
+                            <li>
+                                <b>HOBA</b>
+                                <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7486" target="_blank">RFC
+                                        7486</a>, Section 3, HTTP Origin-Bound Authentication, digital-signature-based
+                                </p>
+                            </li>
+                            <li>
+                                <b>Mutual</b>
+                                <p>See <a href="https://datatracker.ietf.org/doc/html/rfc8120" target="_blank">RFC
+                                        8120</a></p>
+                            </li>
+                            <li>
+                                <b>Negotiate / NTLM</b>
+                                <p>See <a href="https://www.ietf.org/rfc/rfc4559.txt" target="_blank">RFC 4599</a></p>
+                            </li>
+                            <li>
+                                <b>VAPID</b>
+                                <p>See <a href="https://datatracker.ietf.org/doc/html/rfc8292" target="_blank">RFC
+                                        8292</a></p>
+                            </li>
+                            <li>
+                                <b>SCRAM</b>
+                                <p>See <a href="https://datatracker.ietf.org/doc/html/rfc7804" target="_blank">RFC
+                                        7804</a></p>
+                            </li>
+                            <li>
+                                <b>AWS4-HMAC-SHA256</b>
+                                <p>See <a
+                                        href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html"
+                                        target="_blank">AWS docs</a>. This scheme is used for AWS3 server
+                                    authentication.</p>
+                            </li>
+                        </ul>
+                        <p>Schemes can differ in security strength and in their availability in client or server
+                            software.</p>
+                        <p>The "Basic" authentication scheme offers very poor security, but is widely supported and easy
+                            to set up. It is introduced in more detail below.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Basic_authentication_scheme">
+                    <header class="medium-title"><b>Basic authentication scheme</b></header>
+                    <article>
+                        <p>The "Basic" HTTP authentication scheme is defined in <a
+                                href="https://datatracker.ietf.org/doc/html/rfc7617" target="_blank">RFC 7617</a>, which
+                            transmits credentials as user ID/password pairs, encoded using base64.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Security_of_basic_authentication">
+                    <header class="small-title">Security of basic authentication</header>
+                    <article>
+                        <p>As the user ID and password are passed over the network as clear text (it is base64 encoded,
+                            but base64 is a reversible encoding), the basic authentication scheme is not secure.
+                            HTTPS/TLS should be used with basic authentication. Without these additional security
+                            enhancements, basic authentication should not be used to protect sensitive or valuable
+                            information.</p>
+                    </article>
+                </section>
+                <section class="main-section" id="Restricting_access_with_Apache_and_basic_authentication">
+                    <header class="small-title">Restricting access with Apache and basic authentication</header>
+                    <article>
+                        <p>To password-protect a directory on an Apache server, you will need a .htaccess and a
+                            .htpasswd file.</p>
+                        <p>The .htaccess file typically looks like this:</p>
+                        <code>
                                 <span class="code-span">AuthType Basic</span>
                                 <span class="code-span">AuthName "Access to the staging site"</span>
                                 <span class="code-span">AuthUserFile /path/to/.htpasswd</span>
                                 <span class="code-span">Require valid-user</span>
                             </code>
-                            <p>The .htaccess file references a .htpasswd file in which each line consists of a username and a password separated by a colon (:). You cannot see the actual passwords as they are <a href="https://httpd.apache.org/docs/2.4/misc/password_encryptions.html" target="_blank">hashed</a> (using MD5-based hashing, in this case). Note that you can name your .htpasswd file differently if you like, but keep in mind this file shouldn't be accessible to anyone. (Apache is usually configured to prevent access to .ht* files).</p>
-                            <code>
+                        <p>The .htaccess file references a .htpasswd file in which each line consists of a username and
+                            a password separated by a colon (:). You cannot see the actual passwords as they are <a
+                                href="https://httpd.apache.org/docs/2.4/misc/password_encryptions.html"
+                                target="_blank">hashed</a> (using MD5-based hashing, in this case). Note that you can
+                            name your .htpasswd file differently if you like, but keep in mind this file shouldn't be
+                            accessible to anyone. (Apache is usually configured to prevent access to .ht* files).</p>
+                        <code>
                                 <span class="code-span">aladdin:$apr1$ZjTqBB3f$IF
                                     9gdYAGlMrs2fuINjHsz.</span>
                                 <span class="code-span">user2:$apr1$O04r.y2
                                     H$/vEkesPhVInBByJUkXitA/</span>
                             </code>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Restricting_access_with_Nginx_and_basic_authentication">
-                        <header class="small-title">Restricting access with Nginx and basic authentication</header>
-                        <article>
-                            <p>For Nginx, you will need to specify a location that you are going to protect and the auth_basic directive that provides the name to the password-protected area. The auth_basic_user_file directive then points to a .htpasswd file containing the encrypted user credentials, just like in the Apache example above.</p>
-                            <code>
+                    </article>
+                </section>
+                <section class="main-section" id="Restricting_access_with_Nginx_and_basic_authentication">
+                    <header class="small-title">Restricting access with Nginx and basic authentication</header>
+                    <article>
+                        <p>For Nginx, you will need to specify a location that you are going to protect and the
+                            auth_basic directive that provides the name to the password-protected area. The
+                            auth_basic_user_file directive then points to a .htpasswd file containing the encrypted user
+                            credentials, just like in the Apache example above.</p>
+                        <code>
                                 <span class="code-span">location /status {</span>
                                 <span class="code-span sangria">    auth_basic           "Access to the staging site";</span>
                                 <span class="code-span sangria">    auth_basic_user_file /etc/apache2/.htpasswd;</span>
                                 <span class="code-span">}</span>
                             </code>
-                        </article>
-                    </section>
-                    <section class="main-section" id="Access_using_credentials_in_the_URL">
-                        <header class="small-title">Access using credentials in the URL</header>
+                    </article>
+                </section>
+                <section class="main-section" id="Access_using_credentials_in_the_URL">
+                    <header class="small-title">Access using credentials in the URL</header>
+                    <article>
+                        <p>https://username:password@www.example.com/</p>
+                        <p>The use of these URLs is deprecated. In Chrome, the username:password@ part in URLs is even
+                            <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=82250#c7"
+                                target="_blank">stripped out</a> for security reasons. In Firefox, it is checked if the
+                            site actually requires authentication and if not, Firefox will warn the user with a prompt
+                            "You are about to log in to the site <a href="https://www.example.com/"
+                                target="_blank">"www.example.com"</a> with the username "username", but the website does
+                            not require authentication. This may be an attempt to trick you."</p>
+                    </article>
+                </section>
+            </div>
+        </main>
+        <!--Reference-->
+        <div class="reference">
+            <div class="reference-div">
+                <div class="reference-div_div">
+                    <section class="reference-section">
+                        <header>Reference</header>
                         <article>
-                            <p>https://username:password@www.example.com/</p>
-                            <p>The use of these URLs is deprecated. In Chrome, the username:password@ part in URLs is even <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=82250#c7" target="_blank">stripped out</a> for security reasons. In Firefox, it is checked if the site actually requires authentication and if not, Firefox will warn the user with a prompt "You are about to log in to the site <a href="https://www.example.com/" target="_blank">"www.example.com"</a> with the username "username", but the website does not require authentication. This may be an attempt to trick you."</p>
+                            <p>All the documentation in this page is taken from <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication"
+                                    target="_blank">MDN Web Docs</a></p>
                         </article>
                     </section>
-                </div>
-            </main>
-            <!--Reference-->
-            <div class="reference">
-                <div class="reference-div">
-                    <div class="reference-div_div">
-                        <section class="reference-section">
-                            <header>Reference</header>
-                            <article>
-                                <p>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication" target="_blank">MDN Web Docs</a></p>  
-                            </article>
-                        </section>
-                        <section class="reference-section">
-                            <header>See also</header>
-                            <article>
-                                <ul class="reference-list">
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate" target="_blank">WWW-Authenticate</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization" target="_blank">Proxy-Authorization</a></p></li> 
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401 (Unauthorized)</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403" target="_blank">403 (Forbidden)</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407" target="_blank">407 (Proxy Authentication Required)</a></p></li>
-                                </ul>
-                            </article>
-                        </section>
-                        <section class="reference-section">
-                            <header>If you want to learn more</header>
-                            <article>
-                                <ul class="reference-list">
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank">HTTP</a></p></li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">Web APIs</a></p> </li>
-                                    <li><p><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" target="_blank">Web Extensions</a></p> </li>
-                                </ul>
-                            </article>
-                        </section>
-                    </div>
+                    <section class="reference-section">
+                        <header>See also</header>
+                        <article>
+                            <ul class="reference-list">
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate"
+                                            target="_blank">WWW-Authenticate</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization"
+                                            target="_blank">Authorization</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization"
+                                            target="_blank">Proxy-Authorization</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
+                                            target="_blank">401 (Unauthorized)</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+                                            target="_blank">403 (Forbidden)</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407"
+                                            target="_blank">407 (Proxy Authentication Required)</a></p>
+                                </li>
+                            </ul>
+                        </article>
+                    </section>
+                    <section class="reference-section">
+                        <header>If you want to learn more</header>
+                        <article>
+                            <ul class="reference-list">
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                                            target="_blank">HTML</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                                            target="_blank">CSS</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                                            target="_blank">JavaScript</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP"
+                                            target="_blank">HTTP</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">Web
+                                            APIs</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions"
+                                            target="_blank">Web Extensions</a></p>
+                                </li>
+                            </ul>
+                        </article>
+                    </section>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
