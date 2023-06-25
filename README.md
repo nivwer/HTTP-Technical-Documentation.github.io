@@ -17,8 +17,8 @@
   <h3>Mobile</h3>
 </div>
 <p align="center">
-  <img src="ss/screen-667x375.png" height="300">
   <img src="ss/screen-375x667.png" width="300">
+  <img src="ss/screen-667x375.png" height="300">
 </p>
 
 
